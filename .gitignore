@@ -176,3 +176,5 @@ webapi/obj/Debug/netcoreapp2.0/webapi.pdb
 webapi/obj/Debug/netcoreapp2.0/webapi.csproj.FileListAbsolute.txt
 webapi/obj/Debug/netcoreapp2.0/webapi.csprojResolveAssemblyReference.cache
 common/bin/Debug/netstandard2.0/common.dll
+common/bin/Debug/netstandard2.0/common.dll
+common/bin/Debug/netstandard2.0/common.pdb
