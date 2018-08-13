@@ -38,10 +38,10 @@ D:\Git\raffler\backend\repository\bin\Debug\netstandard2.0\repository.dll
 D:\Git\raffler\backend\repository\bin\Debug\netstandard2.0\repository.pdb
 D:\Git\raffler\backend\repository\bin\Debug\netstandard2.0\dal.dll
 D:\Git\raffler\backend\repository\bin\Debug\netstandard2.0\dal.pdb
-D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.csprojResolveAssemblyReference.cache
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.csproj.CoreCompileInputs.cache
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.AssemblyInfoInputs.cache
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.AssemblyInfo.cs
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.csproj.CopyComplete
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.dll
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.pdb
+D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.csprojAssemblyReference.cache

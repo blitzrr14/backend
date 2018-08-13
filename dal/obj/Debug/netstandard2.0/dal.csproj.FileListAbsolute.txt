@@ -27,9 +27,9 @@ C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\o
 D:\Git\raffler\backend\dal\bin\Debug\netstandard2.0\dal.deps.json
 D:\Git\raffler\backend\dal\bin\Debug\netstandard2.0\dal.dll
 D:\Git\raffler\backend\dal\bin\Debug\netstandard2.0\dal.pdb
-D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.csprojResolveAssemblyReference.cache
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.csproj.CoreCompileInputs.cache
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfoInputs.cache
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.dll
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.pdb
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.csprojAssemblyReference.cache

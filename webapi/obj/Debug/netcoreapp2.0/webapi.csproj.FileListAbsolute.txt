@@ -70,10 +70,10 @@ D:\Git\raffler\backend\webapi\bin\Debug\netcoreapp2.0\common.pdb
 D:\Git\raffler\backend\webapi\bin\Debug\netcoreapp2.0\service.pdb
 D:\Git\raffler\backend\webapi\bin\Debug\netcoreapp2.0\dal.pdb
 D:\Git\raffler\backend\webapi\bin\Debug\netcoreapp2.0\repository.pdb
-D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.csprojResolveAssemblyReference.cache
 D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.csproj.CoreCompileInputs.cache
 D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.AssemblyInfoInputs.cache
 D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.AssemblyInfo.cs
 D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.csproj.CopyComplete
 D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.dll
 D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.pdb
+D:\Git\raffler\backend\webapi\obj\Debug\netcoreapp2.0\webapi.csprojAssemblyReference.cache
