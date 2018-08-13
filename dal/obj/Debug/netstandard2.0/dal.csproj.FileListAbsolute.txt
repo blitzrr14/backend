@@ -1,0 +1,35 @@
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\bin\Debug\netstandard2.0\dal.deps.json
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\bin\Debug\netstandard2.0\dal.dll
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\bin\Debug\netstandard2.0\dal.pdb
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\obj\Debug\netstandard2.0\dal.csproj.CoreCompileInputs.cache
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\obj\Debug\netstandard2.0\dal.AssemblyInfoInputs.cache
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\obj\Debug\netstandard2.0\dal.dll
+C:\Users\Net.Core\week4-final\pmaxfs\netcore\finalExam\dal\obj\Debug\netstandard2.0\dal.pdb
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\bin\Debug\netstandard2.0\dal.deps.json
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\bin\Debug\netstandard2.0\dal.dll
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\bin\Debug\netstandard2.0\dal.pdb
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\obj\Debug\netstandard2.0\dal.csproj.CoreCompileInputs.cache
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\obj\Debug\netstandard2.0\dal.AssemblyInfoInputs.cache
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\obj\Debug\netstandard2.0\dal.dll
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\obj\Debug\netstandard2.0\dal.pdb
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\finalExam\dal\obj\Debug\netstandard2.0\dal.csprojResolveAssemblyReference.cache
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\bin\Debug\netstandard2.0\dal.deps.json
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\bin\Debug\netstandard2.0\dal.dll
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\bin\Debug\netstandard2.0\dal.pdb
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\obj\Debug\netstandard2.0\dal.csprojResolveAssemblyReference.cache
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\obj\Debug\netstandard2.0\dal.csproj.CoreCompileInputs.cache
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\obj\Debug\netstandard2.0\dal.AssemblyInfoInputs.cache
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\obj\Debug\netstandard2.0\dal.dll
+C:\Users\RR BAYOTBUANG\Downloads\Compressed\finalExamDone_FINALLY_DONE\api\dal\obj\Debug\netstandard2.0\dal.pdb
+D:\Git\raffler\backend\dal\bin\Debug\netstandard2.0\dal.deps.json
+D:\Git\raffler\backend\dal\bin\Debug\netstandard2.0\dal.dll
+D:\Git\raffler\backend\dal\bin\Debug\netstandard2.0\dal.pdb
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.csprojResolveAssemblyReference.cache
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.csproj.CoreCompileInputs.cache
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfoInputs.cache
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.dll
+D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.pdb
