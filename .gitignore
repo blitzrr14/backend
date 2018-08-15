@@ -193,3 +193,7 @@ webapi/bin/Debug/netcoreapp2.0/webapi.dll
 webapi/bin/Debug/netcoreapp2.0/webapi.pdb
 webapi/bin/Debug/netcoreapp2.0/webapi.runtimeconfig.dev.json
 webapi/obj/project.assets.json
+webapi/bin/Debug/netcoreapp2.0/webapi.dll
+webapi/bin/Debug/netcoreapp2.0/webapi.pdb
+webapi/obj/Debug/netcoreapp2.0/webapi.dll
+webapi/obj/Debug/netcoreapp2.0/webapi.pdb
