@@ -33,3 +33,12 @@ D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.dll
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.pdb
 D:\Git\raffler\backend\dal\obj\Debug\netstandard2.0\dal.csprojAssemblyReference.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\bin\Debug\netstandard2.0\dal.deps.json
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\bin\Debug\netstandard2.0\dal.dll
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\bin\Debug\netstandard2.0\dal.pdb
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\obj\Debug\netstandard2.0\dal.csprojAssemblyReference.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\obj\Debug\netstandard2.0\dal.csproj.CoreCompileInputs.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfoInputs.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\obj\Debug\netstandard2.0\dal.AssemblyInfo.cs
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\obj\Debug\netstandard2.0\dal.dll
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\dal\obj\Debug\netstandard2.0\dal.pdb

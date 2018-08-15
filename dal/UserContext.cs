@@ -7,11 +7,16 @@ namespace dal
 
         public class UserContext : DbContext 
         {
-            public UserContext (DbContextOptions options) : base(options){}
+            public UserContext (DbContextOptions options) : base(options){
+
+                
+            }
 
             protected override void OnConfiguring(DbContextOptionsBuilder builder)
             {
                 base.OnConfiguring(builder);
+
+               
 
             }
             public DbSet<User> Pets {get;set;}

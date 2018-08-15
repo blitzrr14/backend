@@ -22,14 +22,6 @@ namespace dal.models
         
     }
 
-    public class Address : Entity<int>
-    {
-
-        [MaxLength(100)]
-        public string street { get; set; }
-        public string zipcode { get; set; }
-        public string city { get; set; }
-    }
 
     public class Role : Entity<int>
     {

@@ -18,6 +18,7 @@ using repository;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using AutoMapper;
 
 namespace webapi
 {
@@ -33,7 +34,7 @@ namespace webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.Configure<IISOptions>(options => 
             {
                 options.ForwardClientCertificate = false;
@@ -53,12 +54,13 @@ namespace webapi
                         };
                     });
 
-            services.AddEntityFrameworkSqlServer()
-                    .AddDbContext<UserContext>(i => i.UseInMemoryDatabase(databaseName: "UserDB"));
             services.AddTransient<IUserLogic,UserLogic>();
             services.AddTransient<IRepository,Repository<UserContext>>();
-            
 
+        //    services.AddDbContext<UserContext>(options =>options.UseSqlServer("Data Source=rafflerdb.cd7bcjuxuj1p.us-east-2.rds.amazonaws.com;Initial Catalog=testEFDB;Persist Security Info=True;User ID=rafflerdb2018;Password=jmkws2018;MultipleActiveResultSets=True", b => b.MigrationsAssembly("webapi")));
+            services.AddDbContext<RafflerContext>(options =>options.UseSqlServer("Data Source=rafflerdb.cd7bcjuxuj1p.us-east-2.rds.amazonaws.com;Initial Catalog=RafflerDevDB;Persist Security Info=True;User ID=rafflerdb2018;Password=jmkws2018;MultipleActiveResultSets=True", b => b.MigrationsAssembly("webapi")));
+            
+            services.AddAutoMapper();
             services.AddMvc();
             services.AddSwaggerGen(i =>
             {
@@ -86,7 +88,7 @@ namespace webapi
             }
             app.UseAuthentication();
             app.UseSwagger();
-            app.UseSwaggerUI(i => { i.SwaggerEndpoint("/swagger/0.1.0/swagger.json", "PetAPI"); });
+            app.UseSwaggerUI(i => { i.SwaggerEndpoint("/swagger/0.1.0/swagger.json", "RafflerAPI"); });
             app.UseMvc();
         }
     }

@@ -7,6 +7,7 @@ using common.models;
 using repository.interfaces;
 using dal.models;
 using webapi.Models;
+using AutoMapper;
 //using Microsoft.EntityFrameworkCore;
 
 namespace service
@@ -16,10 +17,12 @@ namespace service
     {
 
         private IRepository _repository;
+        private IMapper _mapper;
         
-        public UserLogic(IRepository repository)
+        public UserLogic(IRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
 
@@ -28,34 +31,12 @@ namespace service
             var listofuser = await _repository.GetAllAsync<User>( i => i.OrderBy(o => o.Created), "address,role", null,null);
             if(listofuser != null)
             {
-                var listofpetDto = listofuser.Select(user => new UserDto 
-                {
-                    fullname = user.fullname,
-                    address = new AddressDto 
-                    {
-                        street = user.address.street,
-                        city = user.address.city,
-                        zipcode = user.address.zipcode,
-                        Id = user.Id
-                    },
-                    Id = user.Id,
-                    Username = user.Username,
-                    isActivate = user.isActivate,
-                    role = new RoleDto 
-                    {
-                        Id = user.Id,
-                        name = user.role.name
-                    }
-                });
+                var listofpetDto = listofuser.Select(user => _mapper.Map<User,UserDto>(user));
                return listofpetDto;
        
             }
             return null;
-            
 
-            
-
-           
         }
 
         public async Task<UserDto> GetByUsernamePassword(LoginViewModel model)
@@ -65,16 +46,8 @@ namespace service
                 var user = await _repository.GetFirst<User>(i=> i.Username == model.Username && i.Password == model.Password,null,"role");
                 if(user!= null)
                 {
-                     var dto = new UserDto
-                    {
-                        Username = user.Username,
-                        Password = user.Password,
-                        role = new RoleDto 
-                        {
-                            name = user.role.name
-                        }
-                    };
-                     return dto;
+                    var dto = _mapper.Map<User,UserDto>(user);
+                    return dto;
                 }
 
                 return null;
@@ -95,27 +68,7 @@ namespace service
             var user = await _repository.GetFirst<User>(i => i.Id == id,i=> i.OrderBy(o => o.Created),"role,address");
             if(user != null)
             {
-                var userDto = new UserDto 
-                {
-                    fullname = user.fullname,
-                    address = new AddressDto 
-                    {
-                        street = user.address.street,
-                        city = user.address.city,
-                        zipcode = user.address.zipcode,
-                        Id = user.Id
-                    },
-                    Id = user.Id,
-                    Username = user.Username,
-                    isActivate = user.isActivate,
-                    role = new RoleDto 
-                    {
-                        Id = user.Id,
-                        name = user.role.name
-                        
-                    }
-
-                };
+                var userDto = _mapper.Map<User,UserDto>(user);
                 return userDto;
             }
             return null; 
@@ -125,45 +78,14 @@ namespace service
 
         public async Task Create(UserDto user)
         {
-            var userContext = new User
-            {
-              fullname = user.fullname,
-                address = new Address 
-                {
-                    street = user.address.street,
-                    city = user.address.city,
-                    zipcode = user.address.zipcode,
-                    Id = user.address.Id
-                },
-                Id = user.Id,
-                Username = user.Username,
-                Password = user.Password,
-                role = new Role 
-                {
-                    name = user.role.name
-                }
-            };
+            var userContext = _mapper.Map<UserDto,User>(user);
             _repository.Create<User>(userContext, userContext.CreatedBy);
              await _repository.SaveAsync();
         }
 
         public async Task Update(updateUserReq user)
         {
-
-            var userDto = new User
-            {
-                fullname = user.fullname,
-                address = new Address 
-                {
-                    street = user.address.street,
-                    city = user.address.city,
-                    zipcode = user.address.zipcode,
-                    Id = user.address.Id
-                },
-                Id = user.Id,
-                Username = user.Username,
-
-            };
+            var userDto = _mapper.Map<updateUserReq,User>(user);
             _repository.Update<User>(userDto);
              await _repository.SaveAsync();
         }
@@ -202,7 +124,6 @@ namespace service
 
         public async Task Delete(object id)
         {
-            
             _repository.Delete<User>(id);
              await _repository.SaveAsync();
         }

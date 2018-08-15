@@ -45,3 +45,15 @@ D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.csproj.Cop
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.dll
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.pdb
 D:\Git\raffler\backend\repository\obj\Debug\netstandard2.0\repository.csprojAssemblyReference.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\bin\Debug\netstandard2.0\repository.deps.json
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\bin\Debug\netstandard2.0\repository.dll
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\bin\Debug\netstandard2.0\repository.pdb
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\bin\Debug\netstandard2.0\dal.dll
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\bin\Debug\netstandard2.0\dal.pdb
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.csprojAssemblyReference.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.csproj.CoreCompileInputs.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.AssemblyInfoInputs.cache
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.AssemblyInfo.cs
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.csproj.CopyComplete
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.dll
+C:\Users\Ric.Ybanez\Desktop\Ric.Ybanez\Git\backend\repository\obj\Debug\netstandard2.0\repository.pdb
