@@ -12705,23 +12705,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RR BAYOTBUANG\\.nuget\\packages\\": {},
+    "C:\\Users\\Ric.Ybanez\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\raffler\\backend\\webapi\\webapi.csproj",
+      "projectUniqueName": "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\webapi\\webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "D:\\Git\\raffler\\backend\\webapi\\webapi.csproj",
-      "packagesPath": "C:\\Users\\RR BAYOTBUANG\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\raffler\\backend\\webapi\\obj\\",
+      "projectPath": "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\webapi\\webapi.csproj",
+      "packagesPath": "C:\\Users\\Ric.Ybanez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\RR BAYOTBUANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ric.Ybanez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12734,14 +12734,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Git\\raffler\\backend\\common\\common.csproj": {
-              "projectPath": "D:\\Git\\raffler\\backend\\common\\common.csproj"
+            "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\common\\common.csproj": {
+              "projectPath": "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\common\\common.csproj"
             },
-            "D:\\Git\\raffler\\backend\\dal\\dal.csproj": {
-              "projectPath": "D:\\Git\\raffler\\backend\\dal\\dal.csproj"
+            "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\dal\\dal.csproj": {
+              "projectPath": "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\dal\\dal.csproj"
             },
-            "D:\\Git\\raffler\\backend\\service\\service.csproj": {
-              "projectPath": "D:\\Git\\raffler\\backend\\service\\service.csproj"
+            "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\service\\service.csproj": {
+              "projectPath": "C:\\Users\\Ric.Ybanez\\Desktop\\Ric.Ybanez\\Git\\backend\\service\\service.csproj"
             }
           }
         }

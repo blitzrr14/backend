@@ -53,10 +53,11 @@ namespace webapi
                         };
                     });
 
-            services.AddEntityFrameworkSqlServer()
-                    .AddDbContext<UserContext>(i => i.UseInMemoryDatabase(databaseName: "UserDB"));
             services.AddTransient<IUserLogic,UserLogic>();
             services.AddTransient<IRepository,Repository<UserContext>>();
+
+        //    services.AddDbContext<UserContext>(options =>options.UseSqlServer("Data Source=rafflerdb.cd7bcjuxuj1p.us-east-2.rds.amazonaws.com;Initial Catalog=testEFDB;Persist Security Info=True;User ID=rafflerdb2018;Password=jmkws2018;MultipleActiveResultSets=True", b => b.MigrationsAssembly("webapi")));
+            services.AddDbContext<RafflerContext>(options =>options.UseSqlServer("Data Source=rafflerdb.cd7bcjuxuj1p.us-east-2.rds.amazonaws.com;Initial Catalog=RafflerDevDB;Persist Security Info=True;User ID=rafflerdb2018;Password=jmkws2018;MultipleActiveResultSets=True", b => b.MigrationsAssembly("webapi")));
             
 
             services.AddMvc();
