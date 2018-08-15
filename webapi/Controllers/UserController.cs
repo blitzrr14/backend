@@ -82,9 +82,9 @@ namespace webapi.Controllers
         // POST api/values
         [Authorize(Roles="Admin")]
         [HttpPost]
-        [ProducesResponseType(typeof(UserDto), 201)]
+        [ProducesResponseType(typeof(SysUserDto), 201)]
         [ProducesResponseType(typeof(IDictionary<string,string>), 400)]
-        public async Task<IActionResult> Post([FromBody]UserDto viewmodel)
+        public async Task<IActionResult> Post([FromBody]SysUserDto viewmodel)
         {
             try
             {

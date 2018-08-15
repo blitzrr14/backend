@@ -76,10 +76,10 @@ namespace service
         }
 
 
-        public async Task Create(UserDto user)
+        public async Task Create(SysUserDto user)
         {
-            var userContext = _mapper.Map<UserDto,User>(user);
-            _repository.Create<User>(userContext, userContext.CreatedBy);
+            var userContext = _mapper.Map<SysUserDto,SysUser>(user);
+            _repository.Create<SysUser>(userContext, userContext.CreatedBy);
              await _repository.SaveAsync();
         }
 

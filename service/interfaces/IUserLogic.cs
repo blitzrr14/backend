@@ -13,7 +13,7 @@ namespace service.interfaces
     {
       //  Task<IEnumerable<Customer>> GetSearchScreen(DateTime? startDate, DateTime? endDate, string search);
 
-        Task Create(UserDto model);
+        Task Create(SysUserDto model);
 
         Task<IEnumerable<UserDto>> GetAll();
 

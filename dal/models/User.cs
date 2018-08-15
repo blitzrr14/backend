@@ -19,7 +19,6 @@ namespace dal.models
         public int isActivate {get;set;} = 1;
         public Address address { get; set; }
         
-        
     }
 
 
