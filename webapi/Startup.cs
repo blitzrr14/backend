@@ -87,7 +87,7 @@ namespace webapi
             }
             app.UseAuthentication();
             app.UseSwagger();
-            app.UseSwaggerUI(i => { i.SwaggerEndpoint("/swagger/0.1.0/swagger.json", "PetAPI"); });
+            app.UseSwaggerUI(i => { i.SwaggerEndpoint("/swagger/0.1.0/swagger.json", "RafflerAPI"); });
             app.UseMvc();
         }
     }
