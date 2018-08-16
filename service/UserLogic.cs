@@ -79,6 +79,8 @@ namespace service
         public async Task Create(SysUserDto user)
         {
             var userContext = _mapper.Map<SysUserDto,SysUser>(user);
+            var person = _mapper.Map<PersonDto,Person>(user.Person);
+
             _repository.Create<SysUser>(userContext, userContext.CreatedBy);
              await _repository.SaveAsync();
         }

@@ -14,17 +14,16 @@ namespace common.models
 
         [MaxLength(50),Required]
         public string Username { get; set; }
+        
         [MaxLength(50),Required]
         public string Password { get; set; }
         public int isActivate {get;set;} = 1;
         public PersonDto Person { get; set; }
-
         public byte[] RowVersion { get;set; }
         public DateTime Created { get;set; } = DateTime.Now;
         public DateTime Updated { get;set;} = DateTime.Now;
         public string CreatedBy { get;set;} = "SYSTEM";
-
-         public virtual ICollection<UserRoleDto> UserRoles {get;set;}
+         public virtual List<RolesDto> Roles {get;set;}
         
         
     }

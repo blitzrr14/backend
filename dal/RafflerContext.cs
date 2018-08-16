@@ -2,6 +2,7 @@ using System;
 using dal.models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace dal 
 {
 
@@ -12,7 +13,36 @@ namespace dal
             protected override void OnConfiguring(DbContextOptionsBuilder builder)
             {
                 base.OnConfiguring(builder);
+        
             }
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
+
+                modelBuilder.Entity<UserRole>()
+                .HasKey(t => new { t.UserID, t.RoleID });
+
+                modelBuilder.Entity<UserRole>()
+                .HasOne(x => x.User)
+                .WithMany(x=> x.UserRoles)
+                .HasForeignKey(x=> x.UserID);
+
+                modelBuilder.Entity<UserRole>()
+                .HasOne(x => x.Role)
+                .WithMany(x=> x.UserRoles)
+                .HasForeignKey(x=> x.RoleID);
+
+                modelBuilder.Entity<SysUser>()
+                    .HasMany(x => x.Roles);
+                
+
+
+            }
+
+            
+         
+
+
+
             public DbSet<SysUser> Users {get;set;}
             public DbSet<Role> Roles {get;set;}
             public DbSet<Address> Address {get;set;}

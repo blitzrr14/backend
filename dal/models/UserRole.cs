@@ -9,7 +9,10 @@ namespace dal.models
     public class UserRole : Entity<int>
     {
         public SysUser User { get; set; }
-        public Role Role {get;set;}
+        public Roles Role {get;set;}
+
+        public string UserID {get;set;}
+        public string RoleID {get;set;}
         
     }
 
