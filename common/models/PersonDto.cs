@@ -22,10 +22,7 @@ namespace common.models
         [MaxLength(10)]
         public string Gender {get;set;}
 
-        public byte[] RowVersion { get;set; }
-        public DateTime Created { get;set; } = DateTime.Now;
-        public DateTime Updated { get;set;} = DateTime.Now;
-        public string CreatedBy { get;set;} = "SYSTEM";
+
         
     }
 

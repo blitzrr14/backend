@@ -68,9 +68,6 @@ namespace webapi.Controllers
                 }
                 _logger.LogInformation("SUCCESS");
                 return Ok(pet);
-                  
-
-               
 
             }catch(Exception ex)
             {

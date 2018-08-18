@@ -26,7 +26,7 @@ namespace service.interfaces
          Task<User> DeActivateUser(object id);
          Task<User> UpdatePassword(changePasswordReq model);
 
-        Task<UserDto> GetByUsernamePassword(LoginViewModel model);
+        Task<SysUserDto> GetByUsernamePassword(LoginViewModel model);
     }
 
 }

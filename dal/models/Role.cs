@@ -12,8 +12,7 @@ namespace dal.models
         public string Name { get; set; }
         [MaxLength(100)]
         public string Description { get; set; }
-        public virtual ICollection<SysUser> users {get; set;}
-        public virtual ICollection<UserRole> UserRoles {get;set;}
+
     }
 
 }

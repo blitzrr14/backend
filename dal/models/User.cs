@@ -9,7 +9,7 @@ namespace dal.models
     public class User : Entity<int>
     {
 
-        public Role role { get; set; }
+        public Roles role { get; set; }
         [MaxLength(100)]
         public string fullname { get; set; }
         [MaxLength(50)]

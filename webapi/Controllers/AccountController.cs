@@ -96,14 +96,16 @@ namespace webapi.Controllers
                 var result =  await _logic.GetByUsernamePassword(loginViewModel);
                 if(result != null)
                 {
-                    if(result.role.name == "Admin")
-                    {
-                        userId = 1;
-                    }
-                    else if(result.role.name == "Client")
-                    {
-                        userId = 2;
-                    }
+                    // if(result.role.name == "Admin")
+                    // {
+                    //     userId = 1;
+                    // }
+                    // else if(result.role.name == "Client")
+                    // {
+                    //     userId = 2;
+                    // }
+
+                    return 1;
                 }
             }
           

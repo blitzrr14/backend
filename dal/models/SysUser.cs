@@ -15,11 +15,7 @@ namespace dal.models
         public string Password { get; set; }
         public int isActivate {get;set;} = 1;
         public Person Person { get; set; }
-        public virtual ICollection<Roles> Roles {get;set;}
 
-        public virtual ICollection<UserRole> UserRoles {get;set;}
-
-        
     }
 
 

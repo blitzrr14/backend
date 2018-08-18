@@ -39,14 +39,14 @@ namespace service
 
         }
 
-        public async Task<UserDto> GetByUsernamePassword(LoginViewModel model)
+        public async Task<SysUserDto> GetByUsernamePassword(LoginViewModel model)
         {
             try
             {
-                var user = await _repository.GetFirst<User>(i=> i.Username == model.Username && i.Password == model.Password,null,"role");
+                var user = await _repository.GetFirst<SysUser>(i=> i.Username == model.Username && i.Password == model.Password,null);
                 if(user!= null)
                 {
-                    var dto = _mapper.Map<User,UserDto>(user);
+                    var dto = _mapper.Map<SysUser,SysUserDto>(user);
                     return dto;
                 }
 
@@ -81,6 +81,7 @@ namespace service
             var userContext = _mapper.Map<SysUserDto,SysUser>(user);
             var person = _mapper.Map<PersonDto,Person>(user.Person);
 
+            
             _repository.Create<SysUser>(userContext, userContext.CreatedBy);
              await _repository.SaveAsync();
         }
