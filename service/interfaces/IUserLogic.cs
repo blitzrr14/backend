@@ -15,16 +15,16 @@ namespace service.interfaces
 
         Task Create(SysUserDto model);
 
-        Task<IEnumerable<UserDto>> GetAll();
+        Task<IEnumerable<SysUserDto>> GetAll();
 
         // Task<PetDto> GetFirstAsync();
-         Task<UserDto> GetByIDAsync(int id);
+         Task<SysUserDto> GetByIDAsync(int id);
 
          Task Update(updateUserReq model);
          Task Delete(object id);
 
-         Task<User> DeActivateUser(object id);
-         Task<User> UpdatePassword(changePasswordReq model);
+         Task<SysUser> DeActivateUser(object id);
+         Task<SysUser> UpdatePassword(changePasswordReq model);
 
         Task<SysUserDto> GetByUsernamePassword(LoginViewModel model);
     }

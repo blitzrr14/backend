@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using dal.Abstracts;
 
 
 namespace dal.models
 {
 
-    public class Roles : Entity<int>
+    [Table("ST_Role")]
+    public class Role : Entity<int>
     {
         [MaxLength(100)]
         public string Name { get; set; }

@@ -38,7 +38,8 @@ namespace dal
             // }
 
             public DbSet<SysUser> Users {get;set;}
-            public DbSet<Roles> Roles {get;set;}
+            public DbSet<Balance> Balance {get;set;}
+            public DbSet<Role> Roles {get;set;}
             public DbSet<Address> Address {get;set;}
              public DbSet<Person> Persons {get;set;}
             public DbSet<Raffle> Raffles {get;set;}

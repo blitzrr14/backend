@@ -28,7 +28,7 @@ namespace webapi.Controllers
         //GET api/values
         [HttpGet]
         [Authorize(Roles="Admin")]
-        [ProducesResponseType(typeof(IEnumerable<UserDto>), 200)]
+        [ProducesResponseType(typeof(IEnumerable<SysUserDto>), 200)]
         public async Task<IActionResult> Get()
         {
         
@@ -55,7 +55,7 @@ namespace webapi.Controllers
         // GET api/values/5
         [Authorize(Roles="Admin")]
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(UserDto), 200)]
+        [ProducesResponseType(typeof(SysUserDto), 200)]
         public async Task<IActionResult> Get(int id)
         {
             try
@@ -108,7 +108,7 @@ namespace webapi.Controllers
 
         [Authorize(Roles="Client,Admin")]
         [HttpPost("ChangePassword")]
-        [ProducesResponseType(typeof(UserDto), 201)]
+        [ProducesResponseType(typeof(SysUserDto), 201)]
         [ProducesResponseType(typeof(IDictionary<string,string>), 400)]
         public async Task<IActionResult> Post([FromBody]changePasswordReq viewmodel)
         {
@@ -157,10 +157,17 @@ namespace webapi.Controllers
                 if(ModelState.IsValid)
                 {
                     viewmodel.Id = id;
-                    viewmodel.address.Id = id;
-                     await _logic.Update(viewmodel);
-                     _logger.LogInformation("SUCCESS");
-                    return Ok(viewmodel);
+                    var user =  await _logic.GetByIDAsync(viewmodel.Id);
+                    if(user != null)
+                    {
+                        await _logic.Update(viewmodel);
+                        _logger.LogInformation("SUCCESS");
+                        return Ok(viewmodel);
+                    }
+
+                    return NotFound();
+
+                  
                 }
                 else
                 {
@@ -179,7 +186,7 @@ namespace webapi.Controllers
         [Authorize(Roles="Admin")]
          // PUT api/values/5
         [HttpPut("DeactivateUser/{id}")]
-        [ProducesResponseType(typeof(UserDto), 201)]
+        [ProducesResponseType(typeof(SysUserDto), 201)]
         [ProducesResponseType(typeof(IDictionary<string,string>), 400)]
         public async Task<IActionResult> Put(int id)
         {

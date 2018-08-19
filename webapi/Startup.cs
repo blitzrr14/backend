@@ -58,8 +58,11 @@ namespace webapi
             services.AddTransient<IRepository,Repository<RafflerContext>>();
 
         //    services.AddDbContext<UserContext>(options =>options.UseSqlServer("Data Source=rafflerdb.cd7bcjuxuj1p.us-east-2.rds.amazonaws.com;Initial Catalog=testEFDB;Persist Security Info=True;User ID=rafflerdb2018;Password=jmkws2018;MultipleActiveResultSets=True", b => b.MigrationsAssembly("webapi")));
-            services.AddDbContext<RafflerContext>(options =>options.UseSqlServer("Data Source=rafflerdb.cd7bcjuxuj1p.us-east-2.rds.amazonaws.com;Initial Catalog=RafflerDevDB;Persist Security Info=True;User ID=rafflerdb2018;Password=jmkws2018;MultipleActiveResultSets=True", b => b.MigrationsAssembly("webapi")));
-            
+             services.AddEntityFrameworkSqlServer()
+             .AddDbContext<RafflerContext>(options => options
+             .UseSqlServer(Configuration["ConnectionString"], b => b.MigrationsAssembly("webapi")));
+            //services.AddEntityFrameworkSqlServer()
+              //      .AddDbContext<RafflerContext>(i => i.UseInMemoryDatabase(databaseName: "RafflerDB"));
             services.AddAutoMapper();
             services.AddMvc();
             services.AddSwaggerGen(i =>
