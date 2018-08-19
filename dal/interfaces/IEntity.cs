@@ -7,8 +7,9 @@ namespace dal.interfaces
     {
         [Timestamp]
         byte[] RowVersion {get;set;}
-        DateTime Created {get;set;}
-        DateTime Updated {get;set;}
+        DateTime CreatedAt {get;set;}
+        DateTime? UpdatedAt {get;set;}
+        DateTime? DeletedAt {get;set;}
         string CreatedBy {get;set;}
     }
 

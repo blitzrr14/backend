@@ -26,12 +26,12 @@ namespace service
         }
 
 
-        public async Task<IEnumerable<UserDto>> GetAll()
+        public async Task<IEnumerable<SysUserDto>> GetAll()
         {
-            var listofuser = await _repository.GetAllAsync<User>( i => i.OrderBy(o => o.Created), "address,role", null,null);
+            var listofuser = await _repository.GetAllAsync<SysUser>( i => i.OrderBy(o => o.CreatedAt), "person", null,null);
             if(listofuser != null)
             {
-                var listofpetDto = listofuser.Select(user => _mapper.Map<User,UserDto>(user));
+                var listofpetDto = listofuser.Select(user => _mapper.Map<SysUser,SysUserDto>(user));
                return listofpetDto;
        
             }
@@ -61,14 +61,12 @@ namespace service
         }
 
 
-        public async Task<UserDto> GetByIDAsync(int id)
+        public async Task<SysUserDto> GetByIDAsync(int id)
         {
-             
-            
-            var user = await _repository.GetFirst<User>(i => i.Id == id,i=> i.OrderBy(o => o.Created),"role,address");
+            var user = await _repository.GetFirst<SysUser>(i => i.Id == id,i=> i.OrderBy(o => o.CreatedAt),"person");
             if(user != null)
             {
-                var userDto = _mapper.Map<User,UserDto>(user);
+                var userDto = _mapper.Map<SysUser,SysUserDto>(user);
                 return userDto;
             }
             return null; 
@@ -79,44 +77,45 @@ namespace service
         public async Task Create(SysUserDto user)
         {
             var userContext = _mapper.Map<SysUserDto,SysUser>(user);
-            var person = _mapper.Map<PersonDto,Person>(user.Person);
-
-            
             _repository.Create<SysUser>(userContext, userContext.CreatedBy);
              await _repository.SaveAsync();
         }
 
         public async Task Update(updateUserReq user)
         {
-            var userDto = _mapper.Map<updateUserReq,User>(user);
-            _repository.Update<User>(userDto);
+            var repo = await _repository.GetFirst<SysUser>(i => i.Id == user.Id,i=> i.OrderBy(o => o.CreatedAt),"person");
+            
+            var _person = _mapper.Map<PersonDto,Person>(user.person);
+            repo.person = _person;
+            repo.Username = user.Username;
+    
+            _repository.Update<SysUser>(repo);
              await _repository.SaveAsync();
         }
 
-        public async Task<User> UpdatePassword(changePasswordReq user)
+        public async Task<SysUser> UpdatePassword(changePasswordReq user)
         {
 
-             var repo = await _repository.GetFirst<User>(i => i.Password == user.Password && i.Username == user.Username,i=> i.OrderBy(o => o.Created),"role,address");
+             var repo = await _repository.GetFirst<SysUser>(i => i.Password == user.Password && i.Username == user.Username,i=> i.OrderBy(o => o.CreatedAt),"person");
              
              if(repo != null)
              {
                 repo.Password = user.NewPassword;            
-                _repository.Update<User>(repo);
+                _repository.Update<SysUser>(repo);
                 await _repository.SaveAsync();
              }
-
              return repo;
             
         }
 
-        public async Task<User> DeActivateUser(object id)
+        public async Task<SysUser> DeActivateUser(object id)
         {
-            var result = await _repository.GetByIdAsync<User>(id);
+            var result = await _repository.GetByIdAsync<SysUser>(id);
             if(result != null)
             {
                 result.isActivate = 0;
                 
-              _repository.Update<User>(result);
+              _repository.Update<SysUser>(result);
               await _repository.SaveAsync();
             
             }
@@ -127,7 +126,7 @@ namespace service
 
         public async Task Delete(object id)
         {
-            _repository.Delete<User>(id);
+            _repository.Delete<SysUser>(id);
              await _repository.SaveAsync();
         }
         
