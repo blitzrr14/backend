@@ -23,6 +23,17 @@ namespace repository
 
         }
 
+        public async Task<IEnumerable<TEntity>> GetManyWithFilter<TEntity>(
+            Expression<Func<TEntity, bool>> filter,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy,
+             string includeProperties, int? skip, int? take)
+        where TEntity : class , IEntity
+        {
+            return await GetQueryable<TEntity>(filter,orderBy,includeProperties,skip,take).ToListAsync();
+
+        }
+
+
         Task<TEntity> IReadOnlyRepository.GetByIdAsync<TEntity>(object id)
         {
 

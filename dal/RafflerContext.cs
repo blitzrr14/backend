@@ -15,27 +15,24 @@ namespace dal
                 base.OnConfiguring(builder);
         
             }
-            // protected override void OnModelCreating(ModelBuilder modelBuilder)
-            // {
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
 
-            //     // modelBuilder.Entity<UserRole>()
-            //     // .HasKey(t => new { t.UserID, t.RoleID });
+                modelBuilder.Entity<UserRole>()
+                .HasKey(t => new { t.UserID, t.RoleID });
 
-            //     // modelBuilder.Entity<UserRole>()
-            //     // .HasOne(x => x.User)
-            //     // .WithMany(x=> x.UserRoles)
-            //     // .HasForeignKey(x=> x.UserID);
+                modelBuilder.Entity<UserRole>()
+                .HasOne(x => x.User)
+                .WithMany(x=> x.UserRoles)
+                .HasForeignKey(x=> x.UserID);
 
-            //     // modelBuilder.Entity<UserRole>()
-            //     // .HasOne(x => x.Role)
-            //     // .WithMany(x=> x.UserRoles)
-            //     // .HasForeignKey(x=> x.RoleID);
-
-            //     // modelBuilder.Entity<SysUser>()
-            //     //     .HasMany(x => x.Roles);
+                modelBuilder.Entity<UserRole>()
+                .HasOne(x => x.Role)
+                .WithMany(x=> x.UserRoles)
+                .HasForeignKey(x=> x.RoleID);
                 
 
-            // }
+            }
 
             public DbSet<SysUser> Users {get;set;}
             public DbSet<Balance> Balance {get;set;}

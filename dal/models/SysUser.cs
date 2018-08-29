@@ -17,6 +17,9 @@ namespace dal.models
         public string Password { get; set; }
         public int isActivate {get;set;} = 1;
         public Person person { get; set; }
+        public ICollection<UserRole> UserRoles {get;set;}
+
+
 
     }
 

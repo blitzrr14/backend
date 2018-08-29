@@ -28,11 +28,11 @@ namespace service
 
         public async Task<IEnumerable<SysUserDto>> GetAll()
         {
-            var listofuser = await _repository.GetAllAsync<SysUser>( i => i.OrderBy(o => o.CreatedAt), "person", null,null);
+            var listofuser = await _repository.GetAllAsync<SysUser>( i => i.OrderBy(o => o.CreatedAt), "person,UserRoles", null,null);
             if(listofuser != null)
             {
-                var listofpetDto = listofuser.Select(user => _mapper.Map<SysUser,SysUserDto>(user));
-               return listofpetDto;
+                var listOfUserDto =  _mapper.Map<IEnumerable<SysUser>,IEnumerable<SysUserDto>>(listofuser);
+               return listOfUserDto;
        
             }
             return null;
@@ -43,7 +43,7 @@ namespace service
         {
             try
             {
-                var user = await _repository.GetFirst<SysUser>(i=> i.Username == model.Username && i.Password == model.Password,null);
+                var user = await _repository.GetFirst<SysUser>(i=> i.Username == model.Username && i.Password == model.Password,null,"person,UserRoles");
                 if(user!= null)
                 {
                     var dto = _mapper.Map<SysUser,SysUserDto>(user);
@@ -63,10 +63,11 @@ namespace service
 
         public async Task<SysUserDto> GetByIDAsync(int id)
         {
-            var user = await _repository.GetFirst<SysUser>(i => i.Id == id,i=> i.OrderBy(o => o.CreatedAt),"person");
+            var user = await _repository.GetFirst<SysUser>(i => i.Id == id,null,"person,UserRoles");
             if(user != null)
             {
                 var userDto = _mapper.Map<SysUser,SysUserDto>(user);
+          
                 return userDto;
             }
             return null; 
@@ -77,6 +78,15 @@ namespace service
         public async Task Create(SysUserDto user)
         {
             var userContext = _mapper.Map<SysUserDto,SysUser>(user);
+            
+            userContext.UserRoles = new List<UserRole>();
+            userContext.UserRoles.Add(
+                new UserRole{
+                    UserID = user.Id,
+                    RoleID = 1
+              }
+            );
+           // _repository.Create<UserRole>(userroles, userroles.CreatedBy);
             _repository.Create<SysUser>(userContext, userContext.CreatedBy);
              await _repository.SaveAsync();
         }
@@ -95,7 +105,6 @@ namespace service
 
         public async Task<SysUser> UpdatePassword(changePasswordReq user)
         {
-
              var repo = await _repository.GetFirst<SysUser>(i => i.Password == user.Password && i.Username == user.Username,i=> i.OrderBy(o => o.CreatedAt),"person");
              
              if(repo != null)
@@ -105,7 +114,6 @@ namespace service
                 await _repository.SaveAsync();
              }
              return repo;
-            
         }
 
         public async Task<SysUser> DeActivateUser(object id)
@@ -129,7 +137,10 @@ namespace service
             _repository.Delete<SysUser>(id);
              await _repository.SaveAsync();
         }
-        
+
+   
+
+     
     }
 
 }

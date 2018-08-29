@@ -4,10 +4,10 @@ using dal.interfaces;
 
 namespace dal.Abstracts 
 {
-    public abstract class Entity<T> : IEntity<T>
+    public abstract class CommonEntity
     {
-        [Key]
-        public T Id {get;set;}
+  
+
         public DateTime CreatedAt { get;set; } = DateTime.Now;
         public DateTime? UpdatedAt { get;set;} = null;
         public DateTime? DeletedAt { get;set;} = null;

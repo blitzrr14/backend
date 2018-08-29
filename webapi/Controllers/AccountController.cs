@@ -11,6 +11,8 @@ using repository.interfaces;
 using service.interfaces;
 using webapi.Models;
 using repository;
+using common.models;
+using System.Linq;
 
 namespace webapi.Controllers
 {
@@ -93,19 +95,13 @@ namespace webapi.Controllers
             }
             else 
             {
-                var result =  await _logic.GetByUsernamePassword(loginViewModel);
+                SysUserDto result =  await _logic.GetByUsernamePassword(loginViewModel);
                 if(result != null)
                 {
-                    // if(result.role.name == "Admin")
-                    // {
-                    //     userId = 1;
-                    // }
-                    // else if(result.role.name == "Client")
-                    // {
-                    //     userId = 2;
-                    // }
-
-                    return 1;
+                        
+                   if(result.UserRoles.Where(i=> i.RoleID == (int)RolesEnum.Admin).Count() > 0) userId = 1;
+                   else userId = 2;
+                       
                 }
             }
           

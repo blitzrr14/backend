@@ -5,8 +5,6 @@ namespace dal.interfaces
 
     public interface IEntity 
     {
-        [Timestamp]
-        byte[] RowVersion {get;set;}
         DateTime CreatedAt {get;set;}
         DateTime? UpdatedAt {get;set;}
         DateTime? DeletedAt {get;set;}

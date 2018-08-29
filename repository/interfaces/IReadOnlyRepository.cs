@@ -24,5 +24,11 @@ namespace repository.interfaces
             where TEntity : class , IEntity;
 
         Task<TEntity> GetByIdAsync<TEntity>(object id) where TEntity : class , IEntity;
+
+        Task<IEnumerable<TEntity>> GetManyWithFilter<TEntity>(
+            Expression<Func<TEntity, bool>> filter,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy,
+             string includeProperties, int? skip, int? take)
+             where TEntity: class, IEntity;
     }
 }

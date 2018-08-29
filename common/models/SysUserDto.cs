@@ -19,6 +19,7 @@ namespace common.models
         public string Password { get; set; }
         public int isActivate {get;set;} = 1;
         public PersonDto Person { get; set; }
+        public virtual IEnumerable<UserRoleDto> UserRoles {get;set;}
 
 
     }

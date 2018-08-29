@@ -15,6 +15,8 @@ namespace dal.models
         [MaxLength(100)]
         public string Description { get; set; }
 
+        public List<UserRole> UserRoles {get;set;}
+
     }
 
 }
