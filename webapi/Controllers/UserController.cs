@@ -1,12 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using common.models;
 using dal.models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using repository;
 using service.interfaces;
 
@@ -19,10 +24,12 @@ namespace webapi.Controllers
     {
         private ILogger _logger;
         private IUserLogic _logic;
-        public UserController(ILogger<UserController> logger, IUserLogic logic)
+        private IConfiguration _configuration;
+        public UserController(ILogger<UserController> logger, IUserLogic logic, IConfiguration configuration)
         {
                 _logger = logger;
                 _logic = logic;
+                _configuration = configuration;
         }
 
         //GET api/values
@@ -77,7 +84,6 @@ namespace webapi.Controllers
         }
 
         // POST api/values
-        [Authorize(Roles="Admin")]
         [HttpPost]
         [ProducesResponseType(typeof(SysUserDto), 201)]
         [ProducesResponseType(typeof(IDictionary<string,string>), 400)]
@@ -85,12 +91,35 @@ namespace webapi.Controllers
         {
             try
             {
+                Claim[] claims;
                 if(ModelState.IsValid)
                 {
                    
                     await _logic.Create(viewmodel);
                     _logger.LogInformation("Success: Created");
-                    return Ok();
+
+
+                     claims = new[]
+                    {
+                        new Claim(JwtRegisteredClaimNames.Sub, viewmodel.Username),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                        new Claim("roles", "Client")
+                    
+                    };
+                    
+                    var token = new JwtSecurityToken
+                    (
+                        issuer: _configuration["Issuer"],
+                        audience: _configuration["Audience"],
+                        claims: claims,
+                        expires: DateTime.UtcNow.AddDays(60),
+                        notBefore: DateTime.UtcNow,
+                        signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SigningKey"])),
+                                SecurityAlgorithms.HmacSha256)
+                    );
+
+                    return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+       
                 }
                 else
                 {

@@ -31,10 +31,6 @@ namespace webapi.Migrations
 
                     b.Property<DateTime?>("DeletedAt");
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.Property<string>("city")
@@ -74,10 +70,6 @@ namespace webapi.Migrations
                     b.Property<DateTime?>("DeletedAt");
 
                     b.Property<decimal>("Points");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
 
                     b.Property<DateTime?>("UpdatedAt");
 
@@ -121,10 +113,6 @@ namespace webapi.Migrations
                     b.Property<string>("MiddleName")
                         .HasMaxLength(100);
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
@@ -151,10 +139,6 @@ namespace webapi.Migrations
 
                     b.Property<int?>("RaffleTypeId");
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.Property<int?>("UserId");
@@ -180,10 +164,6 @@ namespace webapi.Migrations
                     b.Property<DateTime?>("DeletedAt");
 
                     b.Property<int?>("RaffleId");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
 
                     b.Property<int?>("TransactionId");
 
@@ -219,10 +199,6 @@ namespace webapi.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(100);
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
@@ -247,10 +223,6 @@ namespace webapi.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(100);
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
@@ -269,12 +241,11 @@ namespace webapi.Migrations
 
                     b.Property<DateTime?>("DeletedAt");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Email")
                         .HasMaxLength(50);
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
+                    b.Property<string>("Password")
+                        .HasMaxLength(50);
 
                     b.Property<DateTime?>("UpdatedAt");
 
@@ -304,10 +275,6 @@ namespace webapi.Migrations
                     b.Property<DateTime?>("DeletedAt");
 
                     b.Property<int?>("RaffleId");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
 
                     b.Property<int?>("TransTypeId");
 
@@ -343,10 +310,6 @@ namespace webapi.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(100);
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
@@ -366,17 +329,9 @@ namespace webapi.Migrations
 
                     b.Property<DateTime?>("DeletedAt");
 
-                    b.Property<int>("Id");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate();
-
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("UserID", "RoleID");
-
-                    b.HasAlternateKey("Id");
 
                     b.HasIndex("RoleID");
 

@@ -15,6 +15,8 @@ namespace dal.models
         public string Username { get; set; }
         [MaxLength(50)]
         public string Password { get; set; }
+        [MaxLength(50)]
+        public string Email { get; set; }
         public int isActivate {get;set;} = 1;
         public Person person { get; set; }
         public ICollection<UserRole> UserRoles {get;set;}

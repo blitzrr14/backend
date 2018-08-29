@@ -238,3 +238,4 @@ webapi/obj/project.assets.json
 webapi/obj/webapi.csproj.nuget.cache
 webapi/obj/webapi.csproj.nuget.g.props
 webapi/obj/webapi.csproj.nuget.g.targets
+webapi/Migrations/20180829111242_TestMigration.cs
