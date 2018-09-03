@@ -60,6 +60,27 @@ namespace service
             
         }
 
+        public async Task<SysUserDto> GetByUsername(string username)
+        {
+            try
+            {
+                var user = await _repository.GetFirst<SysUser>(i=> i.Username == username,null,null);
+                if(user!= null)
+                {
+                    var dto = _mapper.Map<SysUser,SysUserDto>(user);
+                    return dto;
+                }
+
+                return null;
+               
+           
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            
+        }
+
 
         public async Task<SysUserDto> GetByIDAsync(int id)
         {

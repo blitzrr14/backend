@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using repository;
 using service.interfaces;
-
+using webapi.Models;
 
 namespace webapi.Controllers
 {
@@ -41,7 +41,6 @@ namespace webapi.Controllers
         
             try
             {
-               
                 var list = await _logic.GetAll();
                 if(list == null)
                 {
@@ -67,7 +66,6 @@ namespace webapi.Controllers
         {
             try
             {
-               
                 var pet  = await _logic.GetByIDAsync(id);
                 if(pet == null)
                 {
@@ -94,7 +92,15 @@ namespace webapi.Controllers
                 Claim[] claims;
                 if(ModelState.IsValid)
                 {
-                   
+                    var model = new LoginViewModel();
+                    model.Username = viewmodel.Username;
+
+                    if(await _logic.GetByUsername(viewmodel.Username) != null)
+                    {
+                        _logger.LogInformation("Failed: Username Already Exist: "+ viewmodel.Username);
+                        return Ok("Username Already Exist!");
+                    }
+                       
                     await _logic.Create(viewmodel);
                     _logger.LogInformation("Success: Created");
 
@@ -131,8 +137,6 @@ namespace webapi.Controllers
                 _logger.LogCritical("ERROR: Info: "+ex.ToString());
                 return StatusCode(500);
             }
-            
-           
         }
 
         [Authorize(Roles="Client,Admin")]
@@ -145,7 +149,6 @@ namespace webapi.Controllers
             {
                 if(ModelState.IsValid)
                 {
-                   
                     var resp = await _logic.UpdatePassword(viewmodel);
                     if(resp != null)
                     {
@@ -180,7 +183,6 @@ namespace webapi.Controllers
         [ProducesResponseType(typeof(IDictionary<string,string>), 400)]
         public async Task<IActionResult> Put(int id, [FromBody]updateUserReq viewmodel)
         {
-
             try
             {   
                 if(ModelState.IsValid)
@@ -193,10 +195,7 @@ namespace webapi.Controllers
                         _logger.LogInformation("SUCCESS");
                         return Ok(viewmodel);
                     }
-
                     return NotFound();
-
-                  
                 }
                 else
                 {
@@ -219,23 +218,20 @@ namespace webapi.Controllers
         [ProducesResponseType(typeof(IDictionary<string,string>), 400)]
         public async Task<IActionResult> Put(int id)
         {
-
             try
             {   
                 if(ModelState.IsValid)
                 {
-                    
                     await _logic.DeActivateUser(id);
                     _logger.LogInformation("SUCCESS: Successfully Deactivated User: "+ id);
                     return Ok(id);
-
                 }
                 else
                 {
                      _logger.LogError("ERROR: Model State not Valid");
                     return BadRequest(ModelState);
                 }
-
+                
             }catch(Exception ex)
             {
                  _logger.LogCritical("ERROR: Info: "+ex.ToString());
